@@ -1,0 +1,160 @@
+:root {
+  --bg-top: #1d173d;
+  --bg-mid: #7a3d7e;
+  --bg-bottom: #ffb34f;
+  --panel: rgba(23, 17, 39, 0.74);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --text: #fff7ec;
+  --muted: rgba(255, 247, 236, 0.78);
+  --accent: #ffd86b;
+  --accent-strong: #ff8a6b;
+  --shadow: rgba(17, 10, 28, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255, 220, 122, 0.22), transparent 24%),
+    radial-gradient(circle at 85% 28%, rgba(104, 202, 255, 0.24), transparent 24%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 48%, var(--bg-bottom) 100%);
+}
+
+.page {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 60px;
+}
+
+.hero,
+.card {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  box-shadow: 0 22px 52px var(--shadow);
+}
+
+.hero {
+  padding: 36px 28px;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.02;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin-bottom: 14px;
+}
+
+.intro,
+.card p,
+.card li,
+.footer p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.intro {
+  max-width: 640px;
+  margin: 14px 0 0;
+  font-size: 1.04rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #28192f;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  font-weight: 700;
+}
+
+.button-secondary {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.card {
+  padding: 24px 22px;
+  margin-bottom: 16px;
+}
+
+.contact a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.list {
+  padding-left: 18px;
+  margin: 14px 0 0;
+}
+
+.footer {
+  padding: 10px 4px 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: min(100% - 20px, 920px);
+    padding-top: 20px;
+  }
+
+  .hero,
+  .card {
+    border-radius: 22px;
+  }
+
+  .hero {
+    padding: 26px 20px;
+  }
+
+  .card {
+    padding: 20px 18px;
+  }
+}
