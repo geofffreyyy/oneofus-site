@@ -1,86 +1,506 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One of Us - Support & Privacy</title>
-  <meta name="description" content="Support information and privacy policy for One of Us - Finger Picker.">
-  <link rel="stylesheet" href="./styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    /* Pick the language before first paint: ?lang= > saved choice > browser language. */
+    (function () {
+      var d = document.documentElement, l = null;
+      d.className += ' js';
+      try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+      if (l !== 'en' && l !== 'fr') { try { l = localStorage.getItem('oneofus-lang'); } catch (e) {} }
+      if (l !== 'en' && l !== 'fr') {
+        var n = ((navigator.languages && navigator.languages[0]) || navigator.language || 'en').toLowerCase();
+        l = n.indexOf('fr') === 0 ? 'fr' : 'en';
+      }
+      d.setAttribute('data-lang', l);
+      d.lang = l;
+    })();
+  </script>
+  <title>One of Us – The party picker for every group decision</title>
+  <meta name="description" content="Who pays? Who starts? One of Us settles it with 9 party games: finger chooser, wheel, spin the bottle, teams, hot potato, coin flip, dice and more. Free on iPhone – no account, no ads, no tracking.">
+  <meta name="theme-color" content="#12071a">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-itunes-app" content="app-id=6761788947">
+  <link rel="canonical" href="https://geofffreyyy.github.io/oneofus-site/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One of Us – Random Games">
+  <meta property="og:title" content="One of Us – The party picker for every group decision">
+  <meta property="og:description" content="9 party games to settle any group decision. Free on iPhone – no account, no ads, no tracking.">
+  <meta property="og:url" content="https://geofffreyyy.github.io/oneofus-site/">
+  <meta property="og:image" content="https://geofffreyyy.github.io/oneofus-site/assets/icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="One of Us app icon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="One of Us – The party picker for every group decision">
+  <meta name="twitter:description" content="9 party games to settle any group decision. Free on iPhone – no account, no ads, no tracking.">
+  <meta name="twitter:image" content="https://geofffreyyy.github.io/oneofus-site/assets/icon-512.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500..900&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <p class="eyebrow">One of Us - Finger Picker</p>
-      <h1>Support and Privacy</h1>
-      <p class="intro">
-        One simple page for App Store support, privacy, and contact information.
-      </p>
-      <div class="hero-actions">
-        <a href="#support" class="button">Support</a>
-        <a href="#privacy" class="button button-secondary">Privacy Policy</a>
+  <a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span></a>
+
+  <div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span></div>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <img src="assets/icon-256.jpg" alt="" width="34" height="34">
+        <span>One of Us</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections" data-fr-aria-label="Sections">
+        <a href="#games"><span lang="en">Games</span><span lang="fr">Jeux</span></a>
+        <a href="#features"><span lang="en">Features</span><span lang="fr">Atouts</span></a>
+        <a href="#faq">FAQ</a>
+        <a href="#support"><span lang="en">Support</span><span lang="fr">Aide</span></a>
+        <a href="#privacy"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></a>
+      </nav>
+      <div class="nav-end">
+        <div class="lang-switch" role="group" aria-label="Language" data-fr-aria-label="Langue">
+          <button type="button" data-set-lang="en" aria-pressed="true" aria-label="English">EN</button>
+          <button type="button" data-set-lang="fr" aria-pressed="false" aria-label="Français">FR</button>
+        </div>
+        <a class="nav-cta" href="https://apps.apple.com/app/id6761788947"><span lang="en">Get the app</span><span lang="fr">Obtenir</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="app-id">
+            <img class="app-icon" src="assets/icon-256.jpg" width="72" height="72" alt="One of Us app icon" data-fr-alt="Icône de l’app One of Us">
+            <div>
+              <p class="app-name">One of Us</p>
+              <p class="app-sub">Random Games · <span lang="en">Free on iPhone</span><span lang="fr">Gratuit sur iPhone</span></p>
+            </div>
+          </div>
+
+          <h1>
+            <span lang="en"><span class="line">Who pays?</span> <span class="line">Who starts?</span> <span class="grad">One of us.</span></span>
+            <span lang="fr"><span class="line">Qui paie&nbsp;?</span> <span class="line">Qui commence&nbsp;?</span> <span class="grad">Le hasard tranche.</span></span>
+          </h1>
+
+          <p class="lede" lang="en">Nine quick party games that settle any group decision — finger chooser, wheel, spin the bottle, teams, hot potato and more. One iPhone in the middle, everyone around it.</p>
+          <p class="lede" lang="fr">Neuf mini-jeux pour départager n’importe quel groupe&nbsp;: tirage au doigt, roue, bouteille, équipes, patate chaude et bien d’autres. Un iPhone au milieu de la table, et c’est parti.</p>
+
+          <div class="cta-row">
+            <a class="appstore" href="https://apps.apple.com/app/id6761788947">
+              <svg class="apple" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.2zM13.9 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+              <span class="appstore-text">
+                <span lang="en"><small>Download on the</small> <strong>App Store</strong></span>
+                <span lang="fr"><small>Télécharger dans l’</small><strong>App Store</strong></span>
+              </span>
+            </a>
+            <a class="btn-ghost" href="#games"><span lang="en">Meet the 9 games</span><span lang="fr">Découvrir les 9 jeux</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <ul class="trust">
+            <li><span lang="en">Free</span><span lang="fr">Gratuit</span></li>
+            <li><span lang="en">No account</span><span lang="fr">Sans compte</span></li>
+            <li><span lang="en">No ads</span><span lang="fr">Sans pub</span></li>
+            <li><span lang="en">Works offline</span><span lang="fr">Hors ligne</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone" role="img" aria-label="Preview of the Chooser game: five fingers on the screen, one of them gets picked" data-fr-aria-label="Aperçu du tirage au doigt : cinq doigts sur l’écran, l’un d’eux est choisi">
+            <div class="screen">
+              <span class="island"></span>
+              <span class="finger f1"></span>
+              <span class="finger f2"></span>
+              <span class="finger f4"></span>
+              <span class="finger f5"></span>
+              <span class="flood"></span>
+              <span class="finger f3 win"></span>
+              <span class="screen-hint"><span lang="en">Everyone, finger down!</span><span lang="fr">Tout le monde, un doigt&nbsp;!</span></span>
+              <span class="screen-reveal"><span lang="en">You’re it!</span><span lang="fr">C’est toi&nbsp;!</span></span>
+            </div>
+          </div>
+          <span class="chip chip-coin" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="10" cy="12" rx="5.6" ry="8.6"/><path d="M10 3.4h2.6c3.1 0 5.6 3.9 5.6 8.6s-2.5 8.6-5.6 8.6H10"/><ellipse cx="10" cy="12" rx="2.5" ry="4.4" opacity=".6"/></svg></span>
+          <span class="chip chip-dice" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.2"/><circle class="dot" cx="8.4" cy="8.4" r="1.4"/><circle class="dot" cx="15.6" cy="8.4" r="1.4"/><circle class="dot" cx="12" cy="12" r="1.4"/><circle class="dot" cx="8.4" cy="15.6" r="1.4"/><circle class="dot" cx="15.6" cy="15.6" r="1.4"/></svg></span>
+          <span class="chip chip-wheel" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8.3"/><path d="M12 4.7v16.6M4.8 8.85l14.4 8.3M4.8 17.15l14.4-8.3"/><path class="dot" d="M9.6 1.6h4.8L12 5.4z"/></svg></span>
+          <span class="chip chip-bomb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="14" r="7"/><path d="M14.9 9.1l1.9-1.9 1.6 1.6-1.9 1.9"/><path d="M17.6 7.4c.4-2 1.7-3.3 3.6-3.4"/><path d="M7 12.6a3.6 3.6 0 0 1 2.6-2.5"/></svg></span>
+        </div>
       </div>
     </section>
 
-    <section class="card" id="about">
-      <h2>About the App</h2>
-      <p>
-        One of Us is a playful finger picker for group decisions. Everyone places a finger on the
-        screen, the countdown begins, and one player is randomly chosen.
-      </p>
-      <p>
-        The app is designed for fast, local, in-person use on iPhone and does not require an
-        account to play.
-      </p>
+    <!-- ============ TICKER ============ -->
+    <div class="ticker" role="region" aria-label="Decisions One of Us can settle" data-fr-aria-label="Décisions que One of Us peut trancher">
+      <div class="ticker-track">
+        <ul class="ticker-list">
+          <li><span lang="en">Who pays the bill?</span><span lang="fr">Qui paie l’addition&nbsp;?</span></li>
+          <li><span lang="en">Who drives tonight?</span><span lang="fr">Qui conduit ce soir&nbsp;?</span></li>
+          <li><span lang="en">Who picks the movie?</span><span lang="fr">Qui choisit le film&nbsp;?</span></li>
+          <li><span lang="en">Who goes first?</span><span lang="fr">Qui commence&nbsp;?</span></li>
+          <li><span lang="en">Pizza or sushi?</span><span lang="fr">Pizza ou sushis&nbsp;?</span></li>
+          <li><span lang="en">Who does the dishes?</span><span lang="fr">Qui fait la vaisselle&nbsp;?</span></li>
+          <li><span lang="en">Who gets the last slice?</span><span lang="fr">Qui prend la dernière part&nbsp;?</span></li>
+          <li><span lang="en">Which team are you on?</span><span lang="fr">T’es dans quelle équipe&nbsp;?</span></li>
+        </ul>
+        <ul class="ticker-list" aria-hidden="true">
+          <li><span lang="en">Who pays the bill?</span><span lang="fr">Qui paie l’addition&nbsp;?</span></li>
+          <li><span lang="en">Who drives tonight?</span><span lang="fr">Qui conduit ce soir&nbsp;?</span></li>
+          <li><span lang="en">Who picks the movie?</span><span lang="fr">Qui choisit le film&nbsp;?</span></li>
+          <li><span lang="en">Who goes first?</span><span lang="fr">Qui commence&nbsp;?</span></li>
+          <li><span lang="en">Pizza or sushi?</span><span lang="fr">Pizza ou sushis&nbsp;?</span></li>
+          <li><span lang="en">Who does the dishes?</span><span lang="fr">Qui fait la vaisselle&nbsp;?</span></li>
+          <li><span lang="en">Who gets the last slice?</span><span lang="fr">Qui prend la dernière part&nbsp;?</span></li>
+          <li><span lang="en">Which team are you on?</span><span lang="fr">T’es dans quelle équipe&nbsp;?</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ GAMES ============ -->
+    <section class="section" id="games" aria-labelledby="games-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow"><span lang="en">The games</span><span lang="fr">Les jeux</span></p>
+          <h2 id="games-title"><span lang="en">Nine games. Zero arguments.</span><span lang="fr">Neuf jeux. Zéro dispute.</span></h2>
+          <p class="section-lede" lang="en">From “who pays?” to “who goes first?”, there’s a game for every group dilemma — and every single one is fair.</p>
+          <p class="section-lede" lang="fr">De «&nbsp;qui paie&nbsp;?&nbsp;» à «&nbsp;qui commence&nbsp;?&nbsp;», il y a un jeu pour chaque dilemme de groupe — et tous sont parfaitement équitables.</p>
+        </header>
+
+        <ul class="games">
+          <li class="game" style="--c:#ff5c8a;--c2:#ff8a5c">
+            <span class="game-num" aria-hidden="true">01</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle class="dot" cx="12" cy="12" r="3.3"/><circle cx="12" cy="12" r="6.6"/><path d="M12 2.4a9.6 9.6 0 0 1 9.6 9.6M12 21.6A9.6 9.6 0 0 1 2.4 12" opacity=".65"/></svg></span>
+            <h3><span lang="en">Chooser</span><span lang="fr">Tirage au doigt</span> <span class="badge"><span lang="en">The classic</span><span lang="fr">Le classique</span></span></h3>
+            <p lang="en">Everyone puts a finger on the screen. A short countdown, then it picks one or several winners, splits everyone into teams, or sets the playing order. The winner’s color floods the screen.</p>
+            <p lang="fr">Chacun pose un doigt sur l’écran. Petit compte à rebours, puis l’app désigne un ou plusieurs gagnants, forme des équipes ou fixe l’ordre de passage. La couleur du gagnant envahit l’écran.</p>
+          </li>
+          <li class="game" style="--c:#ff9f43;--c2:#ffc94a">
+            <span class="game-num" aria-hidden="true">02</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8.3"/><path d="M12 4.7v16.6M4.8 8.85l14.4 8.3M4.8 17.15l14.4-8.3"/><path class="dot" d="M9.6 1.6h4.8L12 5.4z"/></svg></span>
+            <h3><span lang="en">Wheel</span><span lang="fr">Roue</span></h3>
+            <p lang="en">Spin a wheel of names or options: ready-made presets (Where do we eat? Movie night?), your player list, or elimination mode. It ticks as it slows down… suspense guaranteed.</p>
+            <p lang="fr">Faites tourner une roue de prénoms ou d’options&nbsp;: modèles prêts à l’emploi (On mange où&nbsp;? Soirée ciné&nbsp;?), votre liste de joueurs ou mode élimination. Elle cliquette en ralentissant… suspense garanti.</p>
+          </li>
+          <li class="game" style="--c:#2fc9ef;--c2:#5b8cff">
+            <span class="game-num" aria-hidden="true">03</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10.6 2.6h2.8v4c0 1 2.2 2 2.2 4.4v8.6a1.8 1.8 0 0 1-1.8 1.8h-3.6a1.8 1.8 0 0 1-1.8-1.8V11c0-2.4 2.2-3.4 2.2-4.4z" transform="rotate(40 12 12)"/><path d="M3.2 8.2a9.6 9.6 0 0 1 3.6-4.6M20.8 15.8a9.6 9.6 0 0 1-3.6 4.6" opacity=".65"/></svg></span>
+            <h3><span lang="en">Spin the Bottle</span><span lang="fr">Bouteille</span></h3>
+            <p lang="en">Flick a bottle — or an arrow — and watch who it lands on. The oldest party game, in your pocket.</p>
+            <p lang="fr">Lancez la bouteille (ou une flèche) d’une pichenette et voyez sur qui elle s’arrête. Le plus vieux jeu de soirée, dans votre poche.</p>
+          </li>
+          <li class="game" style="--c:#3ddc84;--c2:#2dd4bf">
+            <span class="game-num" aria-hidden="true">04</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8.2" cy="8" r="3.2"/><path d="M2.6 19.6c0-3.3 2.5-5.6 5.6-5.6s5.6 2.3 5.6 5.6"/><circle cx="16.6" cy="8.8" r="2.7"/><path d="M15.4 14.2c.4-.1.8-.1 1.2-.1 2.8 0 4.9 2.1 4.9 5"/></svg></span>
+            <h3><span lang="en">Teams</span><span lang="fr">Équipes</span></h3>
+            <p lang="en">Fair, random teams from your player list in one tap. Happy with the draw? Share it with the group.</p>
+            <p lang="fr">Des équipes équilibrées et tirées au hasard en un geste, depuis votre liste de joueurs. Le tirage vous plaît&nbsp;? Partagez-le avec le groupe.</p>
+          </li>
+          <li class="game" style="--c:#ff4d5e;--c2:#ff9f43">
+            <span class="game-num" aria-hidden="true">05</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="14" r="7"/><path d="M14.9 9.1l1.9-1.9 1.6 1.6-1.9 1.9"/><path d="M17.6 7.4c.4-2 1.7-3.3 3.6-3.4"/><path d="M7 12.6a3.6 3.6 0 0 1 2.6-2.5"/></svg></span>
+            <h3><span lang="en">Hot Potato</span><span lang="fr">Patate chaude</span></h3>
+            <p lang="en">Pass the phone before the hidden timer goes off. Nobody knows when it’ll blow — that’s the whole point.</p>
+            <p lang="fr">Faites passer le téléphone avant que le minuteur caché n’explose. Personne ne sait quand ça va sauter&nbsp;: c’est tout l’intérêt.</p>
+          </li>
+          <li class="game" style="--c:#ffc94a;--c2:#ff9f43">
+            <span class="game-num" aria-hidden="true">06</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="10" cy="12" rx="5.6" ry="8.6"/><path d="M10 3.4h2.6c3.1 0 5.6 3.9 5.6 8.6s-2.5 8.6-5.6 8.6H10"/><ellipse cx="10" cy="12" rx="2.5" ry="4.4" opacity=".6"/></svg></span>
+            <h3><span lang="en">Coin Flip</span><span lang="fr">Pile ou face</span></h3>
+            <p lang="en">Heads or tails with a satisfying 3D flip — plus streaks and stats for the sore losers.</p>
+            <p lang="fr">Pile ou face avec un lancer en 3D bien satisfaisant — et des séries et statistiques pour les mauvais perdants.</p>
+          </li>
+          <li class="game" style="--c:#b47cff;--c2:#ff5c8a">
+            <span class="game-num" aria-hidden="true">07</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.2"/><circle class="dot" cx="8.4" cy="8.4" r="1.4"/><circle class="dot" cx="15.6" cy="8.4" r="1.4"/><circle class="dot" cx="12" cy="12" r="1.4"/><circle class="dot" cx="8.4" cy="15.6" r="1.4"/><circle class="dot" cx="15.6" cy="15.6" r="1.4"/></svg></span>
+            <h3><span lang="en">Dice</span><span lang="fr">Dés</span></h3>
+            <p lang="en">Roll 1 to 6 dice at once — or just shake your phone. No more dice lost under the couch.</p>
+            <p lang="fr">Lancez de 1 à 6 dés d’un coup… ou secouez simplement votre téléphone. Fini les dés perdus sous le canapé.</p>
+          </li>
+          <li class="game" style="--c:#5b8cff;--c2:#b47cff">
+            <span class="game-num" aria-hidden="true">08</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.6 3.5L7.6 20.5M16.4 3.5l-2 17M4.2 8.6h16.3M3.5 15.4h16.3"/></svg></span>
+            <h3><span lang="en">Random Number</span><span lang="fr">Nombre aléatoire</span></h3>
+            <p lang="en">Any range you like, several numbers at once, with an optional no-repeat mode. Perfect for raffles and draws.</p>
+            <p lang="fr">L’intervalle de votre choix, plusieurs nombres d’un coup, avec option sans doublon. Idéal pour les tombolas et les tirages.</p>
+          </li>
+          <li class="game" style="--c:#2dd4bf;--c2:#3ddc84">
+            <span class="game-num" aria-hidden="true">09</span>
+            <span class="game-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13.6" r="7.6"/><path d="M12 13.6V9.6M9.8 2.6h4.4M12 2.6V6M18.3 6.9l1.4-1.4"/></svg></span>
+            <h3><span lang="en">Timer Challenge</span><span lang="fr">Défi chrono</span></h3>
+            <p lang="en">Stop the clock as close to the target as you can. Feeling brave? Blind mode hides the timer.</p>
+            <p lang="fr">Arrêtez le chrono au plus près de la cible. Vous vous sentez d’attaque&nbsp;? Le mode aveugle cache le chrono.</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card" id="support">
-      <h2>Support</h2>
-      <p>
-        If you need help, want to report a bug, or have a question about the app, please contact:
-      </p>
-      <p class="contact">
-        <a href="mailto:supportgeof973@gmail.com">supportgeof973@gmail.com</a>
-      </p>
-      <ul class="list">
-        <li>App name: One of Us - Finger Picker</li>
-        <li>Platform: iPhone</li>
-        <li>Current support language: English</li>
-      </ul>
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow"><span lang="en">Extras</span><span lang="fr">Les petits plus</span></p>
+          <h2 id="features-title"><span lang="en">Made for real groups.</span><span lang="fr">Pensé pour les vraies soirées.</span></h2>
+          <p class="section-lede" lang="en">All the little touches that make it the app everyone reaches for when the group can’t decide.</p>
+          <p class="section-lede" lang="fr">Tous ces petits détails qui en font l’app qu’on dégaine dès que le groupe n’arrive pas à se décider.</p>
+        </header>
+
+        <ul class="stats">
+          <li><strong>9</strong><span class="stat-label"><span lang="en">party games</span><span lang="fr">jeux de soirée</span></span><span class="stat-detail"><span lang="en">in one free app</span><span lang="fr">dans une seule app gratuite</span></span></li>
+          <li><strong>7</strong><span class="stat-label"><span lang="en">color themes</span><span lang="fr">thèmes de couleur</span></span><span class="stat-detail"><span lang="en">to match the mood of the night</span><span lang="fr">pour coller à l’ambiance</span></span></li>
+          <li><strong>6</strong><span class="stat-label"><span lang="en">languages</span><span lang="fr">langues</span></span><span class="stat-detail"><span lang="en">EN · FR · ES · DE · IT · PT</span><span lang="fr">FR · EN · ES · DE · IT · PT</span></span></li>
+          <li><strong>0</strong><span class="stat-label"><span lang="en">data collected</span><span lang="fr">donnée collectée</span></span><span class="stat-detail"><span lang="en">no account, no ads, no tracking</span><span lang="fr">ni compte, ni pub, ni pistage</span></span></li>
+        </ul>
+
+        <ul class="features">
+          <li class="feature" style="--c:#ff5c8a">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20c0-3.6 2.8-6 6.2-6s6.2 2.4 6.2 6"/><path d="M16.5 5h5M16.5 9h5M18.5 13h3"/></svg></span>
+            <h3><span lang="en">One player list</span><span lang="fr">Une seule liste de joueurs</span></h3>
+            <p lang="en">Add your friends once. The Wheel, Teams and the other games all share the same list.</p>
+            <p lang="fr">Ajoutez vos amis une fois&nbsp;: la Roue, les Équipes et les autres jeux partagent la même liste.</p>
+          </li>
+          <li class="feature" style="--c:#ff9f43">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.4h3.4L12 5.5v13l-4.6-3.9H4z"/><path d="M15.6 9a4.2 4.2 0 0 1 0 6M18.4 6.2a8.2 8.2 0 0 1 0 11.6"/></svg></span>
+            <h3><span lang="en">Sounds &amp; haptics</span><span lang="fr">Sons et vibrations</span></h3>
+            <p lang="en">Ticks, clicks and buzzes you can feel. Sounds follow your silent switch.</p>
+            <p lang="fr">Des tic-tac, des clics et des vibrations qu’on ressent. Les sons respectent le mode silencieux.</p>
+          </li>
+          <li class="feature" style="--c:#3ddc84">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7.2" y="3" width="9.6" height="18" rx="2.6"/><path d="M11 17.6h2M3.6 8.5v7M20.4 8.5v7"/></svg></span>
+            <h3><span lang="en">Shake to play</span><span lang="fr">Secouez pour jouer</span></h3>
+            <p lang="en">Give your iPhone a shake to roll the dice, flip the coin or spin the wheel.</p>
+            <p lang="fr">Un petit coup de poignet pour lancer les dés, la pièce ou la roue.</p>
+          </li>
+          <li class="feature" style="--c:#b47cff">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="2.6" width="6" height="11" rx="3"/><path d="M5.6 11a6.4 6.4 0 0 0 12.8 0M12 17.4v4"/></svg></span>
+            <h3><span lang="en">Siri &amp; Shortcuts</span><span lang="fr">Siri et Raccourcis</span></h3>
+            <p lang="en">“Flip a coin with One of Us.” “Roll dice with One of Us.” Hands-free.</p>
+            <p lang="fr">«&nbsp;Pile ou face avec One of Us.&nbsp;» «&nbsp;Lance les dés avec One of Us.&nbsp;» Sans les mains.</p>
+          </li>
+          <li class="feature" style="--c:#2fc9ef">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.2 2.6L5.4 13.4h6l-1 8 7.8-10.8h-6z"/></svg></span>
+            <h3><span lang="en">Quick actions</span><span lang="fr">Actions rapides</span></h3>
+            <p lang="en">Press and hold the app icon to jump straight into a game.</p>
+            <p lang="fr">Un appui long sur l’icône, et vous voilà directement dans un jeu.</p>
+          </li>
+          <li class="feature" style="--c:#2dd4bf">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.6 8.9a14 14 0 0 1 18.8 0M5.8 12.3a9.4 9.4 0 0 1 12.4 0M9 15.6a4.8 4.8 0 0 1 6 0"/><circle class="dot" cx="12" cy="19.2" r="1.4"/><path d="M3.6 3.6l16.8 16.8"/></svg></span>
+            <h3><span lang="en">Play anywhere</span><span lang="fr">Jouez partout</span></h3>
+            <p lang="en">No connection needed: on a plane, at the campsite or in a basement bar with zero bars.</p>
+            <p lang="fr">Aucune connexion requise&nbsp;: en avion, au camping ou au fond d’un bar sans réseau.</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card" id="privacy">
-      <h2>Privacy Policy</h2>
-      <p><strong>Effective date:</strong> April 8, 2026</p>
-      <p>
-        One of Us - Finger Picker does not collect, store, track, or share personal data.
-      </p>
-      <p>
-        The app works entirely on-device and does not require an account, login, or internet
-        connection to use its core features.
-      </p>
-      <p>
-        We do not use analytics, advertising SDKs, third-party tracking, or remote databases to
-        collect information about users.
-      </p>
-      <p>
-        If this changes in a future version, this privacy policy will be updated on this page.
-      </p>
+    <!-- ============ CTA ============ -->
+    <section class="section section-tight" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="cta-card">
+          <img class="cta-icon" src="assets/icon-256.jpg" width="96" height="96" alt="" loading="lazy">
+          <h2 id="cta-title"><span lang="en">Settle the next <span class="nowrap">“who pays?”</span> in three seconds.</span><span lang="fr">Le prochain <span class="nowrap">«&nbsp;qui paie&nbsp;?&nbsp;»</span> se règle en trois secondes.</span></h2>
+          <p lang="en">Free on the App Store. No account, no ads — just put a finger down and play.</p>
+          <p lang="fr">Gratuit sur l’App Store. Pas de compte, pas de pub&nbsp;: on pose un doigt et on joue.</p>
+          <a class="appstore" href="https://apps.apple.com/app/id6761788947">
+            <svg class="apple" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.2zM13.9 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+            <span class="appstore-text">
+              <span lang="en"><small>Download on the</small> <strong>App Store</strong></span>
+              <span lang="fr"><small>Télécharger dans l’</small><strong>App Store</strong></span>
+            </span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="card" id="review">
-      <h2>App Review Notes</h2>
-      <p>
-        The app does not require sign-in and does not include user-generated content, messaging,
-        ads, purchases, or data collection.
-      </p>
-      <p>
-        Real multi-touch is best experienced on a physical iPhone or iPad.
-      </p>
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <header class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title"><span lang="en">Your questions, answered.</span><span lang="fr">Vos questions, nos réponses.</span></h2>
+        </header>
+
+        <div class="faq">
+          <details name="faq">
+            <summary><span lang="en">Is it really random?</span><span lang="fr">C’est vraiment du hasard&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">Yes. Every result comes from your iPhone’s secure random number generator, so every finger, name, team and number has exactly the same chance. No favorites, no hidden tricks — not even for the developer.</p>
+              <p lang="fr">Oui. Chaque résultat vient du générateur aléatoire sécurisé de votre iPhone&nbsp;: chaque doigt, prénom, équipe ou nombre a exactement la même chance. Pas de favori, pas de triche — même pas pour le développeur.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">How many fingers can play at once?</span><span lang="fr">Combien de doigts peuvent jouer en même temps&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">As many fingers as your iPhone can track at the same time. Lay the phone flat on the table so everyone can reach it. Bigger group? Use the Wheel or Teams with your player list — no fingers needed.</p>
+              <p lang="fr">Autant que votre iPhone peut en détecter en même temps. Posez le téléphone à plat sur la table pour que chacun puisse l’atteindre. Vous êtes plus nombreux&nbsp;? Passez à la Roue ou aux Équipes avec votre liste de joueurs&nbsp;: pas besoin de doigts.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">Why don’t I hear any sound?</span><span lang="fr">Pourquoi je n’entends aucun son&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">Sounds follow your iPhone’s silent mode. Turn silent mode off (with the Ring/Silent switch or the Action button, depending on your model), turn the volume up, and check that sounds are on in the app’s settings.</p>
+              <p lang="fr">Les sons suivent le mode silencieux de l’iPhone. Désactivez-le (avec le bouton Sonnerie/Silence ou le bouton Action, selon votre modèle), montez le volume et vérifiez que les sons sont activés dans les réglages de l’app.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">Do I need an internet connection or an account?</span><span lang="fr">Faut-il une connexion internet ou un compte&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">No and no. Everything runs right on your iPhone: no sign-up, no login, no connection. It even works in airplane mode.</p>
+              <p lang="fr">Ni l’un ni l’autre. Tout se passe sur votre iPhone&nbsp;: pas d’inscription, pas d’identifiant, pas de réseau. Ça marche même en mode avion.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">Does the app collect my data?</span><span lang="fr">L’app collecte-t-elle mes données&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">No. No analytics, no ads, no tracking, no third-party SDKs. The player names you type stay on your iPhone. All the details are in the <a href="#privacy">privacy policy</a>.</p>
+              <p lang="fr">Non. Aucune mesure d’audience, aucune pub, aucun pistage, aucun SDK tiers. Les prénoms que vous saisissez restent sur votre iPhone. Tous les détails sont dans la <a href="#privacy">politique de confidentialité</a>.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">How do I use Siri and Shortcuts?</span><span lang="fr">Comment utiliser Siri et Raccourcis&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">Just say “Flip a coin with One of Us” or “Roll dice with One of Us”. You’ll also find One of Us actions in the Shortcuts app, to build your own shortcuts or add them to your Home Screen. And press and hold the app icon for quick actions.</p>
+              <p lang="fr">Dites simplement «&nbsp;Pile ou face avec One of Us&nbsp;» ou «&nbsp;Lance les dés avec One of Us&nbsp;». Les actions One of Us sont aussi dans l’app Raccourcis, pour créer vos propres raccourcis ou les ajouter à l’écran d’accueil. Et un appui long sur l’icône de l’app ouvre les actions rapides.</p>
+            </div>
+          </details>
+          <details name="faq">
+            <summary><span lang="en">Is it really free?</span><span lang="fr">C’est vraiment gratuit&nbsp;?</span></summary>
+            <div class="answer">
+              <p lang="en">Yes. One of Us is free to download, with no ads and no account to create.</p>
+              <p lang="fr">Oui. One of Us est gratuit, sans pub et sans compte à créer.</p>
+            </div>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <footer class="footer">
-      <p>&copy; 2026 Geoffrey Guerin. All rights reserved.</p>
-    </footer>
+    <!-- ============ SUPPORT ============ -->
+    <section class="section" id="support" aria-labelledby="support-title">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow"><span lang="en">Support</span><span lang="fr">Assistance</span></p>
+          <h2 id="support-title"><span lang="en">Need a hand?</span><span lang="fr">Besoin d’un coup de main&nbsp;?</span></h2>
+          <p class="section-lede" lang="en">Found a bug, got an idea for a new game, or just want to say hi? Write to me — I’m the developer, and I read every message.</p>
+          <p class="section-lede" lang="fr">Un bug, une idée de nouveau jeu, ou juste envie de dire bonjour&nbsp;? Écrivez-moi&nbsp;: je suis le développeur, et je lis tous les messages.</p>
+        </header>
+
+        <div class="support-grid">
+          <div class="card contact-card">
+            <span class="feature-icon" style="--c:#ff5c8a" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.8 7l8.2 6 8.2-6"/></svg></span>
+            <h3><span lang="en">Email support</span><span lang="fr">Écrire au support</span></h3>
+            <a class="email" href="mailto:supportgeof973@gmail.com?subject=One%20of%20Us">supportgeof973@gmail.com</a>
+            <p class="muted"><span lang="en">Usually answered within a few days.</span><span lang="fr">Réponse en général sous quelques jours.</span></p>
+            <a class="btn-primary" href="mailto:supportgeof973@gmail.com?subject=One%20of%20Us"><span lang="en">Write an email</span><span lang="fr">Envoyer un e-mail</span></a>
+          </div>
+
+          <div class="card">
+            <h3><span lang="en">Reporting a bug?</span><span lang="fr">Vous signalez un bug&nbsp;?</span></h3>
+            <p class="muted" lang="en">Include these and I can fix it much faster:</p>
+            <p class="muted" lang="fr">Ajoutez ces infos, je pourrai corriger bien plus vite&nbsp;:</p>
+            <ol class="checklist">
+              <li><span lang="en"><strong>Your iPhone model</strong> (for example, iPhone 15)</span><span lang="fr"><strong>Le modèle de votre iPhone</strong> (par exemple, iPhone 15)</span></li>
+              <li><span lang="en"><strong>Your iOS version</strong> — Settings › General › About</span><span lang="fr"><strong>Votre version d’iOS</strong> — Réglages › Général › Informations</span></li>
+              <li><span lang="en"><strong>The app version</strong> — shown in the app’s Settings</span><span lang="fr"><strong>La version de l’app</strong> — affichée dans les Réglages de l’app</span></li>
+              <li><span lang="en"><strong>What happened</strong> — which game, what you did; a screenshot or screen recording helps a lot</span><span lang="fr"><strong>Ce qui s’est passé</strong> — le jeu concerné, ce que vous avez fait&nbsp;; une capture ou un enregistrement d’écran aide beaucoup</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRIVACY ============ -->
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap narrow">
+        <header class="section-head">
+          <p class="eyebrow"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></p>
+          <h2 id="privacy-title"><span lang="en">Privacy Policy</span><span lang="fr">Politique de confidentialité</span></h2>
+          <p class="date-chip"><span lang="en">Effective date: November 1, 2026</span><span lang="fr">En vigueur au 1<sup>er</sup> novembre 2026</span></p>
+        </header>
+
+        <article class="card policy">
+          <div class="tldr">
+            <span class="feature-icon" style="--c:#2dd4bf" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8l7.4 3v5.6c0 4.6-3.1 8.4-7.4 9.8-4.3-1.4-7.4-5.2-7.4-9.8V5.8z"/><path d="M8.8 12l2.2 2.2 4.3-4.4"/></svg></span>
+            <p lang="en"><strong>In short: One of Us collects nothing.</strong> No account, no analytics, no ads, no tracking. What you type stays on your iPhone.</p>
+            <p lang="fr"><strong>En bref&nbsp;: One of Us ne collecte rien.</strong> Pas de compte, pas de mesure d’audience, pas de pub, pas de pistage. Ce que vous saisissez reste sur votre iPhone.</p>
+          </div>
+
+          <p lang="en">This policy explains how One of Us – Random Games (“the app”), developed by Geoffrey Guerin, an independent developer, handles your information.</p>
+          <p lang="fr">Cette politique explique comment One of Us – Random Games («&nbsp;l’app&nbsp;»), développée par Geoffrey Guerin, développeur indépendant, traite vos informations.</p>
+
+          <h3><span lang="en">Information collected</span><span lang="fr">Données collectées</span></h3>
+          <p lang="en">None. The app does not collect any personal data, does not send data to any server, does not track you across apps or websites, and does not share or sell anything to anyone.</p>
+          <p lang="fr">Aucune. L’app ne collecte aucune donnée personnelle, n’envoie rien à aucun serveur, ne vous suit pas d’une app ou d’un site à l’autre, et ne partage ni ne vend quoi que ce soit à qui que ce soit.</p>
+
+          <h3><span lang="en">No account</span><span lang="fr">Pas de compte</span></h3>
+          <p lang="en">You never need to create an account, sign in or give an email address to use the app.</p>
+          <p lang="fr">Vous n’avez jamais besoin de créer un compte, de vous connecter ni de donner une adresse e-mail pour utiliser l’app.</p>
+
+          <h3><span lang="en">No analytics, ads or third-party SDKs</span><span lang="fr">Ni mesure d’audience, ni pub, ni SDK tiers</span></h3>
+          <p lang="en">The app contains no analytics, no advertising and no third-party SDKs. If you have chosen to share analytics with app developers in your iPhone’s settings, Apple may provide anonymous crash reports, under Apple’s privacy policy.</p>
+          <p lang="fr">L’app ne contient aucun outil de mesure d’audience, aucune publicité et aucun SDK tiers. Si vous avez choisi de partager les analyses avec les développeurs dans les réglages de votre iPhone, Apple peut transmettre des rapports de plantage anonymes, selon sa propre politique de confidentialité.</p>
+
+          <h3><span lang="en">Data stored on your iPhone</span><span lang="fr">Données stockées sur votre iPhone</span></h3>
+          <p lang="en">Player names, game stats and your preferences (theme, sounds, game options) are saved only on your iPhone, in the app’s local storage. They are never sent to me or to anyone else, and they are deleted when you delete the app.</p>
+          <p lang="fr">Les prénoms des joueurs, les statistiques de jeu et vos préférences (thème, sons, options de jeu) sont enregistrés uniquement sur votre iPhone, dans le stockage local de l’app. Ils ne me sont jamais envoyés, ni à personne d’autre, et ils sont effacés quand vous supprimez l’app.</p>
+
+          <h3><span lang="en">Siri &amp; Shortcuts</span><span lang="fr">Siri et Raccourcis</span></h3>
+          <p lang="en">If you use Siri or Shortcuts, your request is handled by Apple, under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>. The app only receives the action to perform — for example, “flip a coin” — never your voice or any recording.</p>
+          <p lang="fr">Si vous utilisez Siri ou Raccourcis, votre demande est traitée par Apple, selon <a href="https://www.apple.com/fr/legal/privacy/">la politique de confidentialité d’Apple</a>. L’app reçoit uniquement l’action à effectuer — par exemple «&nbsp;pile ou face&nbsp;» — jamais votre voix ni aucun enregistrement.</p>
+
+          <h3><span lang="en">Children</span><span lang="fr">Enfants</span></h3>
+          <p lang="en">Because the app collects no data at all, it collects no data from children.</p>
+          <p lang="fr">Comme l’app ne collecte aucune donnée, elle n’en collecte aucune auprès des enfants.</p>
+
+          <h3><span lang="en">This website</span><span lang="fr">Ce site</span></h3>
+          <p lang="en">This website sets no cookies and uses no analytics or trackers. Your language choice is remembered in your browser’s local storage, on your device only. The site is hosted on GitHub Pages and loads its font from Google Fonts; like any web host, these services may process technical data such as your IP address to deliver the page.</p>
+          <p lang="fr">Ce site ne dépose aucun cookie et n’utilise ni mesure d’audience ni traceur. Votre choix de langue est mémorisé dans le stockage local de votre navigateur, sur votre appareil uniquement. Le site est hébergé par GitHub Pages et charge sa police via Google Fonts&nbsp;; comme tout hébergeur, ces services peuvent traiter des données techniques, comme votre adresse IP, pour afficher la page.</p>
+
+          <h3><span lang="en">Changes to this policy</span><span lang="fr">Modifications</span></h3>
+          <p lang="en">If this policy changes, the new version will be posted on this page with an updated effective date.</p>
+          <p lang="fr">En cas de changement, la nouvelle version sera publiée sur cette page avec une nouvelle date d’entrée en vigueur.</p>
+
+          <h3>Contact</h3>
+          <p lang="en">Questions about privacy? Email <a href="mailto:supportgeof973@gmail.com">supportgeof973@gmail.com</a>.</p>
+          <p lang="fr">Une question sur la confidentialité&nbsp;? Écrivez à <a href="mailto:supportgeof973@gmail.com">supportgeof973@gmail.com</a>.</p>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="assets/icon-256.jpg" alt="" width="34" height="34" loading="lazy">
+          <span>One of Us</span>
+        </a>
+        <p class="muted"><span lang="en">The party picker for every group decision.</span><span lang="fr">Le tirage au sort de toutes vos soirées.</span></p>
+      </div>
+      <nav class="footer-links" aria-label="Footer" data-fr-aria-label="Pied de page">
+        <a href="#games"><span lang="en">Games</span><span lang="fr">Jeux</span></a>
+        <a href="#faq">FAQ</a>
+        <a href="#support"><span lang="en">Support</span><span lang="fr">Aide</span></a>
+        <a href="#privacy"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></a>
+        <a href="https://apps.apple.com/app/id6761788947">App Store</a>
+        <a href="mailto:supportgeof973@gmail.com">supportgeof973@gmail.com</a>
+      </nav>
+      <div class="footer-legal">
+        <p><span lang="en">© 2026 Geoffrey Guerin. All rights reserved.</span><span lang="fr">© 2026 Geoffrey Guerin. Tous droits réservés.</span></p>
+        <p class="tiny"><span lang="en">Apple, the Apple logo, iPhone, Siri and App Store are trademarks of Apple Inc.</span><span lang="fr">Apple, le logo Apple, iPhone, Siri et App Store sont des marques d’Apple Inc.</span></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
