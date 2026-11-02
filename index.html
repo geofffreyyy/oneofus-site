@@ -63,6 +63,7 @@
         <span>One of Us</span>
       </a>
       <nav class="nav-links" aria-label="Sections" data-fr-aria-label="Sections">
+        <a href="#film"><span lang="en">Film</span><span lang="fr">Film</span></a>
         <a href="#games"><span lang="en">Games</span><span lang="fr">Jeux</span></a>
         <a href="#features"><span lang="en">Features</span><span lang="fr">Atouts</span></a>
         <a href="#faq">FAQ</a>
@@ -108,8 +109,9 @@
                 <span lang="fr"><small>Télécharger dans l’</small><strong>App Store</strong></span>
               </span>
             </a>
-            <a class="btn-ghost" href="#games"><span lang="en">Meet the 9 games</span><span lang="fr">Découvrir les 9 jeux</span>
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a class="btn-ghost" href="#film" data-play-film>
+              <svg class="btn-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg>
+              <span lang="en">Watch the film</span><span lang="fr">Voir le film</span>
             </a>
           </div>
 
@@ -168,6 +170,42 @@
         </ul>
       </div>
     </div>
+
+    <!-- ============ FILM ============ -->
+    <!-- The film files come from the launch-film workspace (outils/web.py): one cut per language and orientation. -->
+    <section class="section film-section" id="film" aria-labelledby="film-title">
+      <div class="wrap">
+        <header class="section-head film-head">
+          <p class="eyebrow"><span lang="en">The film</span><span lang="fr">Le film</span></p>
+          <h2 id="film-title"><span lang="en">See it in action.</span><span lang="fr">L’app en action.</span></h2>
+          <p class="section-lede" lang="en">Who pays, who drives, who goes first: watch One of Us settle it in under a minute.</p>
+          <p class="section-lede" lang="fr">Qui paie, qui conduit, qui commence&nbsp;: regardez One of Us trancher en moins d’une minute.</p>
+        </header>
+
+        <div class="film-frame" id="film-frame" data-state="idle">
+          <video class="film-video" id="film-video" playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+          <div class="film-cover" id="film-cover">
+            <!-- The poster carries words, so each language has its own; the hidden one is never fetched. -->
+            <picture lang="en">
+              <source media="(orientation: portrait)" srcset="films/en-poster-portrait.jpg">
+              <img src="films/en-poster-landscape.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <picture lang="fr">
+              <source media="(orientation: portrait)" srcset="films/fr-poster-portrait.jpg">
+              <img src="films/fr-poster-landscape.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+            </picture>
+            <button type="button" class="film-play" id="film-play">
+              <span class="film-play-disc" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" focusable="false"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg></span>
+              <span class="film-play-text">
+                <span class="film-when-idle"><span lang="en">Play the film</span><span lang="fr">Lancer le film</span></span><span class="film-when-ended"><span lang="en">Watch again</span><span lang="fr">Revoir le film</span></span><span class="sr-only"><span lang="en">, with sound</span><span lang="fr">, avec le son</span></span>
+                <span class="film-time" aria-hidden="true"><span lang="en">0:41</span><span lang="fr">0:37</span></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <p class="film-note"><span lang="en">With sound. Captions are available in the player.</span><span lang="fr">Avec le son. Sous-titres disponibles dans le lecteur.</span></p>
+      </div>
+    </section>
 
     <!-- ============ GAMES ============ -->
     <section class="section" id="games" aria-labelledby="games-title">

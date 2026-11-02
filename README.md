@@ -17,6 +17,16 @@ no cookies, no analytics.
 - `styles.css` – all styles (colors are CSS variables at the top)
 - `script.js` – EN/FR toggle (remembers the choice in `localStorage`)
 - `assets/` – icon copies made from the app icon with `sips`
+- `films/` – the launch film: `<lang>-<landscape|portrait>.mp4`, a poster for each
+  (`<lang>-poster-<orientation>.jpg`) and captions (`<lang>.vtt`), in English and French
+
+## The film
+
+The `#film` section plays the launch film behind its poster. Nothing is downloaded
+until someone presses play; the language follows the page and the orientation is
+read at the click (upright screens get the 9:16 cut). The files are exported by the
+2G Business films workspace (`outils/web.py`), the same files as on the 2G Business site.
+If the film changes, update the durations shown on the play button (`.film-time`).
 
 ## Editing text (English + French)
 
